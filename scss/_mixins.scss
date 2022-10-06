@@ -9,6 +9,15 @@
 
 }
 
+@mixin lasse {
+  background-color: lightgrey;
+  width: 70%;
+  border-radius: 3%;
+  padding: 8%;
+  margin: 20px;
+
+}
+
 @mixin tablet {
   @media screen and (min-width: 768px){
     @content;

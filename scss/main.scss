@@ -1,10 +1,8 @@
 @use "mixins";
 @use "variables" as v;
-/*Ska man skriva fallbackfont?*/
 
 html,
 body {
-  // height: 100%;
   width: 100%;
   font-family: "Times New Roman", Arial, serif;
   margin: 0%;
@@ -15,11 +13,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  // height: 100%;
   width: 100%;
 }
-
-/* Här kommer header*/
 
 header {
   width: 100%;
@@ -36,14 +31,12 @@ main {
 
 
 .top-nav {
-  // height: 5vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  // height: 3px;
+  color: rgb(255, 255, 255);
   padding: 1em;
 
   &__logo {
@@ -57,23 +50,25 @@ main {
   flex-direction: row;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding:0;
   overflow-x: hidden;
   background-color: rgba(255, 255, 255, 0.1);
   @include mixins.tablet {
     background-color: unset;
   }
 
-  // background-color: rgb(255, 255, 255,0.1);
-
-  // ovanför background-color tar bort färgen för mina länkar
-
   &__link {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     margin: 0 1rem;
     overflow: hidden;
+    padding:0%
   }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
 }
 
 a {
@@ -226,23 +221,27 @@ i {
   }
 
   &__image {
-    width: 200px;
+    width: 200;
     border-radius: 50%;
     box-shadow: 1px 0px 20px rgba(151, 149, 149, 0.8),
       0px 10px 5px rgba(151, 149, 149, 0.1);
   }
 
   &__box {
+    display: flex;
+    justify-items: center;
     background-color: lightgrey;
     border-radius: 3%;
-    padding: 50px;
+    width: 80%;
     margin: 20px;
+  
   }
 
 
   &__info {
     width: 220px;
     text-align: justify;
+
   }
 
   &__icon {
@@ -251,12 +250,14 @@ i {
 
 }
 
+
 .arrow-two {
   font-size: 20px;
   color: black;
   position: relative; //varför behövs jag? 
 
 }
+
 
 .footer {
   background-color: rgb(0, 0, 0);
@@ -266,9 +267,12 @@ i {
   flex-direction: column;
   align-items: center;
 
+
   &__all {
     display: flex;
     flex-direction: column;
+    padding: 5%;
+    gap: 20%;
    
   }
 
@@ -276,11 +280,13 @@ i {
     list-style: none;
     font-size: 20px;
     display: flex;
-    gap: 10px;
+    gap: 10%;
   }
+
+  
 }
 
-// här kommer koden för desktop
+// -----------------------------------------------------här kommer koden för desktop--------------------------------------------------------------------------//
 
 @media (min-width: 768px) {
   
@@ -309,10 +315,7 @@ i {
       width: 500px;
       color: v.$primarycolor;
     }
-  
-   
   }
-
 
   .team {
     display: flex;
@@ -320,13 +323,8 @@ i {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    
-    
     background-color: rgb(255, 255, 255);
-    // width: 100%;
-    // height: 100vh;
     position: relative;
-    // gap: 10px;
 
     &__title {
       display: flex;
@@ -342,27 +340,18 @@ i {
       width: 45%;
       gap: 10px;
     }
-
-
-    // &__arrow {
-    //   display: flex;
-    //  justify-content: center;
-    //  color: white;
-    // }
-    // // den här pilen är högst upp
   }
 
   .footer {
-    background-color: rgb(0, 0, 0);
-    color: v.$primarycolor;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+  
   
     &__all {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      gap: 10%;
+
      
     }
   
@@ -370,7 +359,12 @@ i {
       list-style: none;
       font-size: 20px;
       display: flex;
+      flex-direction: row;
+      width: 500px; // jag ska kunna använda spacearound istället.
+      padding: 1%;
       gap: 10px;
     }
+
+
 }
 }
