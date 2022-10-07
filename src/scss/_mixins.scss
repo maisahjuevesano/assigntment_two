@@ -6,23 +6,19 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-
 }
 
-@mixin lasse {
-  background-color: lightgrey;
-  width: 70%;
-  border-radius: 3%;
-  padding: 8%;
-  margin: 20px;
+@mixin img-lasse{
+  width: 200px; //kanske ändra senare
+  border-radius: 50%;
+  box-shadow: 1px 0px 20px rgba(151, 149, 149, 0.8),
+    0px 10px 5px rgba(151, 149, 149, 0.1);
+    margin: 0 0 15 0;
 
 }
 
 @mixin tablet {
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     @content;
   }
-  
 }
-
-

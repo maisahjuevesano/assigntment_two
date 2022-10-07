@@ -18,20 +18,18 @@ body {
 }
 
 header {
-  @include mixins.tablet{
-      padding: 0;
-  }
-
   width: 100%;
   height: 100vh;
   background-image: v.$bg-image;
   @include mixins.bg;
 
+  @include mixins.tablet {
+    padding: 0;
+  }
 }
 
-main { 
+main {
   width: 100%;
-
 }
 
 .home {
@@ -43,25 +41,20 @@ main {
     gap: 10px;
     text-align: center;
     margin-top: 12%;
-   
-  
+
     &__title {
       font-size: 30px;
       color: v.$primarycolor;
     }
-  
+
     &__text {
       font-size: 25px;
       width: 500px;
       color: v.$primarycolor;
     }
-
   }
 
-  
-  
   width: 100%;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,10 +72,9 @@ main {
     width: 310px;
     color: v.$primarycolor;
   }
-
 }
 
-.team__title{
+.team__title {
   display: flex;
   justify-content: center;
 }
@@ -90,43 +82,18 @@ main {
 a {
   display: flex;
   justify-content: center;
-  
 
-i {
-  color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 15px;
-}
+  i {
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+  }
 }
 
 .team {
-  @include mixins.tablet {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: rgb(255, 255, 255);
-    position: relative;
-
-    &__title {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
-
-    &__rakib{
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      background-color: rgb(255, 255, 255);
-      width: 45%;
-      gap: 10px;
-    }
-  }
-  background-color: rgb(255, 255, 255);
+  background-color: v.$primarycolor;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -139,63 +106,95 @@ i {
   }
 
   &__image {
-    width: 200;
+    width: 200px; //kanske ändra senare
     border-radius: 50%;
     box-shadow: 1px 0px 20px rgba(151, 149, 149, 0.8),
       0px 10px 5px rgba(151, 149, 149, 0.1);
   }
 
-  &__box {
-    display: flex;
-    justify-items: center;
-    background-color: lightgrey;
-    border-radius: 3%;
-    width: 80%;
-    margin: 20px;
-  
+  &__image--lasse{
+    @include mixins.img-lasse;
   }
 
+  &__all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+  }
+
+  &__box-info {
+    display: flex;
+    background-color: v.$thirdcolor;
+    border-radius: 3%;
+    width: 100%;
+    padding: 10%;
+    margin: 10%;
+  }
 
   &__info {
     width: 220px;
     text-align: justify;
-
   }
 
   &__icon {
     font-size: 250%;
   }
 
-}
+  @include mixins.tablet {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
 
+    &__title {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &__all {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background-color: v.$primarycolor;
+      width: 45%;
+      gap: 10px;
+    }
+
+    &__box-info {
+      display: flex;
+      justify-content: center;
+      background-color: v.$thirdcolor;
+      border-radius: 3%;
+      width: 75%;
+      padding: 10%;
+      margin: 10%;
+    }
+  }
+}
 
 .arrow-two {
   font-size: 20px;
-  color: black;
-  position: relative; //varför behövs jag? 
-
+  color: v.$secondarycolor;
+  position: relative;
 }
 
-
 .footer {
-  @include mixins.tablet{
-    background-color: blue;
-  }
-
-  background-color: rgb(0, 0, 0);
+  background-color: v.$secondarycolor;
   color: v.$primarycolor;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-
   &__all {
     display: flex;
     flex-direction: column;
     padding: 5%;
     gap: 20%;
-   
   }
 
   &__list {
@@ -204,9 +203,27 @@ i {
     display: flex;
     gap: 10%;
     padding: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
   }
-  
+
+  @include mixins.tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &__all {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+      width: 200%;
+    }
+  }
 }
-
-//Här kommer alla mediaquerys för desktop-----------------------------
-
