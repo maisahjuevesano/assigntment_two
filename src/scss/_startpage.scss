@@ -33,6 +33,25 @@ main {
 }
 
 .home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  margin-top: 55%;
+
+  &__title {
+    font-size: 30px;
+    color: v.$primarycolor;
+  }
+
+  &__text {
+    font-size: 25px;
+    width: 310px;
+    color: v.$primarycolor;
+  }
+  
   @include mixins.tablet {
     width: 100%;
     display: flex;
@@ -54,24 +73,6 @@ main {
     }
   }
 
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  text-align: center;
-  margin-top: 55%;
-
-  &__title {
-    font-size: 30px;
-    color: v.$primarycolor;
-  }
-
-  &__text {
-    font-size: 25px;
-    width: 310px;
-    color: v.$primarycolor;
-  }
 }
 
 .team__title {
